@@ -32,5 +32,22 @@ function bSearch(array, item) {
     return position;
 }
 
-console.log(bSearch(data, 4));
+function recursiveBSearch(array, item, startIdx = 0, endIdx = array.length) {
+    iterationCount++;
+
+    const middleIdx = Math.floor((startIdx + endIdx) / 2);
+    const current = array[middleIdx];
+
+    if (current === item) {
+        return middleIdx;
+    }
+    if (current < item) {
+        return recursiveBSearch(array, item, middleIdx + 1, endIdx);
+    } else {
+        return recursiveBSearch(array, item, startIdx, middleIdx - 1);
+    }
+}
+
+// console.log(bSearch(data, 3));
+console.log(recursiveBSearch(data, 3));
 console.log(iterationCount);
