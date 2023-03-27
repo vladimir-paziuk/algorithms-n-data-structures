@@ -1,3 +1,6 @@
+// A stack is a data structure that works based on the FILO principle.
+// First In, Last Out
+
 class Stack {
     constructor() {
         this.items = [];
@@ -27,11 +30,11 @@ class Stack {
         return this.items[this.count - 1];
     }
 
-    size() {
+    get size() {
         return this.count;
     }
 
-    isEmpty() {
+    get isEmpty() {
         return this.count === 0;
     }
 }
@@ -39,6 +42,7 @@ class Stack {
 const stack = new Stack();
 
 console.log(stack.push('123'));
-console.log(stack.push('123'));
+console.log(stack.push('456'));
 console.log(stack.pop());
-console.log(stack.size());
+console.log(stack.size);
+console.log(stack.isEmpty);
