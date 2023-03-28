@@ -10,7 +10,7 @@ class Queue {
 
     enqueue(element) {
         this.elements[this.tail] = element;
-        return this.tail++;
+        return this.tail++; // Notice: returns not incremented value
     }
 
     dequeue() {
